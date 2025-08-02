@@ -11,22 +11,22 @@ export const load: PageLoad = async () => {
     const profiles = profilesSettled.reduce((acc, result, idx) => {
         if (result.status === 'fulfilled') {
             return acc.concat({
-                idx,
+                key: idx,
                 profile: result.value,
                 error: undefined
             });
         } else {
             return acc.concat({
-                idx,
+                key: idx,
                 profile: undefined,
                 error: `Error fetching profile: ${result.reason}`
             });
 
         }
-    }, [] as { idx: number, profile?: GithubProfile; error?: string }[])
+    }, [] as { key: number; profile?: GithubProfile; error?: string }[])
     
 	return {
-		profiles
+		data: profiles
 	};
 };
 // This load function returns an array of GitHub usernames.

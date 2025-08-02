@@ -3,7 +3,6 @@
 
 	type Props = {
         profile: {
-            idx: number;
 		    profile?: GithubProfile;
             error?: string;
         }
@@ -17,7 +16,8 @@
 	{#if user}
 		<div>
 			<img src={user.avatar_url} alt={user.name} class="avatar" />
-			<p>{user.name}</p>
+			<p>Username: {user.name}</p>
+			<p>Name: {user.name}</p>
 			<p>Bio: {user.bio || 'N/A'}</p>
 			<p>Followers: {user.followers}</p>
 			<p>Following: {user.following}</p>

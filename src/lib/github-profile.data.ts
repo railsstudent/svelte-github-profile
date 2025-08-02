@@ -7,11 +7,12 @@ export function fetchGithubProfile(username: string, ): Promise<GithubProfile> {
 			Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
 		}
 	})
-		.then((response) => {
+		.then(async (response) => {
 			if (!response.ok) {
 				throw new Error(`GitHub profile not found for user: ${username}`);
 			}
-			return response.json() as Promise<GithubProfile>;
+			const result = await response.json() as Promise<GithubProfile>
+			return { username, ...result };
 		})
 		.catch((error) => {
 			console.error('Error fetching GitHub profile:', error);

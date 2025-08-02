@@ -2,12 +2,16 @@
 	import type { PageProps } from './$types';
 	import GithubProfileCard from '$lib/github-profile-card.svelte';
 
-	let { data }: PageProps = $props();
+	let { data: results }: PageProps = $props();
 
-	const profiles = data.profiles;
+	const { data: profiles } = results;
 </script>
 
 <p>Here are some Github profiles:</p>
-{#each profiles as profile (profile.idx)}
-	<GithubProfileCard {profile} />
-{/each}
+{#if !profiles || profiles.length === 0}
+	<p>No profiles found.</p>
+{:else}
+	{#each profiles as profile (profile.key)}
+		<GithubProfileCard {profile} />
+	{/each}
+{/if}
