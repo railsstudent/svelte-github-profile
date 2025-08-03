@@ -1,5 +1,5 @@
 export type GithubProfile = {
-	username: string;
+	login: string;
 	name: string;
 	followers: number;
 	following: number;

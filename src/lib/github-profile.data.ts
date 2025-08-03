@@ -11,8 +11,9 @@ export function fetchGithubProfile(username: string, ): Promise<GithubProfile> {
 			if (!response.ok) {
 				throw new Error(`GitHub profile not found for user: ${username}`);
 			}
-			const result = await response.json() as Promise<GithubProfile>
-			return { username, ...result };
+
+			const result = await response.json() as Promise<GithubProfile>;
+			return result;
 		})
 		.catch((error) => {
 			console.error('Error fetching GitHub profile:', error);

@@ -3,7 +3,7 @@ import { fetchGithubProfile } from '$lib/github-profile.data';
 import type { GithubProfileItem } from '$lib/github-profile-item.type';
 
 export const load: PageLoad = async () => {
-	const usernames = ['antfu', 'railsstudent', 'danielkellyio', 'hootlex', 'MooseSaeed'];
+	const usernames = ['johnsoncodehk', 'antfu', 'railsstudent', 'danielkellyio', 'hootlex', 'MooseSaeed'];
 	const profilesSettled = await Promise.allSettled(
         usernames.map((username) => fetchGithubProfile(username))
     );
