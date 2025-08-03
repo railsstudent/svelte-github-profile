@@ -13,12 +13,10 @@ export const load: PageLoad = async () => {
             return acc.concat({
                 key: idx,
                 profile: result.value,
-                error: undefined
             });
         } else {
             return acc.concat({
                 key: idx,
-                profile: undefined,
                 error: `Error fetching profile: ${result.reason}`
             });
 
