@@ -1,11 +1,8 @@
 <script lang="ts">
-	import type { GithubProfile } from './github-profile.type';
+	import type { GithubProfileItem } from './github-profile-item.type';
 
 	type Props = {
-        profile: {
-		    profile?: GithubProfile;
-            error?: string;
-        }
+        profile: GithubProfileItem
 	};
 
 	const { profile }: Props = $props();

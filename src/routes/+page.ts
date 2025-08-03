@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 import { fetchGithubProfile } from '$lib/github-profile.data';
-import type { GithubProfile } from '$lib/github-profile.type';
+import type { GithubProfileItem } from '$lib/github-profile-item.type';
 
 export const load: PageLoad = async () => {
 	const usernames = ['antfu', 'railsstudent', 'danielkellyio', 'hootlex', 'MooseSaeed'];
@@ -23,7 +23,7 @@ export const load: PageLoad = async () => {
             });
 
         }
-    }, [] as { key: number; profile?: GithubProfile; error?: string }[])
+    }, [] as GithubProfileItem[])
     
 	return {
 		data: profiles
