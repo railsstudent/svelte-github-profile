@@ -10,22 +10,10 @@
 
 </script>
 
-<div class="header">
-    <h1>Github Profile List (Svelte ver.)</h1>
+<div class="col-span-full mb-[1.25rem] text-center">
+    <h1 class="text-3xl">Github Profile List (Svelte ver.)</h1>
 </div>
 {#each profiles as profile (profile.key)}
     <GithubProfileCard {profile} />
 {/each}
 
-<style>
-    div.header {
-        grid-column: 1 / -1;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-        color: #333;
-    }
-</style>
