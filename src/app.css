@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+#app {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-weight: normal;
+}

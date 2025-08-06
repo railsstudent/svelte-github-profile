@@ -10,7 +10,7 @@
 
 </script>
 
-<div class="col-span-full mb-[1.25rem] text-center">
+<div class="col-span-full mb-[1.25rem] text-center flex justify-center items-center h-full">
     <h1 class="text-3xl">Github Profile List (Svelte ver.)</h1>
 </div>
 {#each profiles as profile (profile.key)}
