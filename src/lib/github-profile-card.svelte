@@ -5,21 +5,21 @@
         profile: GithubProfileItem
 	};
 
-	const { profile }: Props = $props();
-    const { profile: user, error } = profile;
+	const { profile: result }: Props = $props();
+    const { profile, error } = result;
 </script>
 
 <div>
-	{#if user}
+	{#if profile}
 		<div>
-			<img src={user.avatar_url} alt={user.name} class="avatar" />
-			<p>Username: {user.login}</p>
-			<p>Name: {user.name}</p>
-			<p>Bio: {user.bio || 'N/A'}</p>
-			<p>Followers: {user.followers}</p>
-			<p>Following: {user.following}</p>
-			<p>Public Repos: {user.public_repos}</p>
-			<a href="{user.html_url}" target="_blank" rel="noopener noreferrer">View Profile </a>
+			<img src={profile.avatar_url} alt={profile.name} class="avatar" />
+			<p>Username: {profile.login}</p>
+			<p>Name: {profile.name}</p>
+			<p>Bio: {profile.bio || 'N/A'}</p>
+			<p>Followers: {profile.followers}</p>
+			<p>Following: {profile.following}</p>
+			<p>Public Repos: {profile.public_repos}</p>
+			<a href="{profile.html_url}" target="_blank" rel="noopener noreferrer">View Profile </a>
 		</div>
 	{:else if error}
 		<div>

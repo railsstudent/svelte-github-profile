@@ -11,7 +11,7 @@
 </script>
 
 <div class="header">
-    <h1>Github Profile List</h1>
+    <h1>Github Profile List (Svelte ver.)</h1>
 </div>
 {#each profiles as profile (profile.key)}
     <GithubProfileCard {profile} />
