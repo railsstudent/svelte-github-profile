@@ -37,10 +37,7 @@ jobs:
         run: npm run build # or your build command
 
       - name: Add .nojekyll file
-        run: touch dist/.nojekyll
-
-      - name: Add 404.html file
-        run: cp dist/index.html dist/404.html
+        run: touch build/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
@@ -48,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # or the path to your built site
+          path: ./build # or the path to your built site
 
       - name: Deploy to GitHub Pages
         id: deployment
